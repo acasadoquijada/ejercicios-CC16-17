@@ -1,7 +1,3 @@
----
-layout: ejercicios
----
-
 # Ejercicios arquitecturas software para la nube
 
 ## Ejercicio 1
