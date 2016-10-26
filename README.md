@@ -1,2 +1,5 @@
-# ejercicios-CC16-17
-Repositorio para ejercicios de la asignatura Cloud Computing 2016/2017
+# Ejercicios CC 
+
+## Lista de ejercicios
+
+* [Ejercicios tema 1](Ejercicios/ejerciciosTema1.md)
