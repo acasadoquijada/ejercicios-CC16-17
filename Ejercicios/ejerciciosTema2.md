@@ -168,3 +168,69 @@ La lanzamos
 
 ![ejercicio6-3](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/tema%206/ejercicio6-3_zpskcjacwcu.png)
 
+##Ejercicio 6
+###Desplegar la aplicación que se haya usado anteriormente con todos los módulos necesarios usando un playbook de Ansible.
+
+Mi playbook de ansible es el siguiente:
+
+~~~
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks: 
+  - name: Actualizamos 
+    apt: update_cache=yes
+  - name: Instalamos los paquetes necesarios
+    apt: name=python3-setuptools state=present
+    apt: name=python3-dev state=present 
+    apt: name=build-essential state=present
+    apt: name=python-psycopg2 state=present
+    apt: name=libpq-dev state=present
+    apt: name=python3-pip state=present
+    apt: name=git state=present
+  - name: Instalamos pip para python3
+    action: apt pkg=python3-pip
+  - name: Descargamos la aplicacion
+    git: repo=https://github.com/acasadoquijada/IV.git  dest=proyectoIV clone=yes force=yes
+  - name: Damos permisos de ejecución a la app
+    command: chmod -R +x proyectoIV
+  - name: Instalamos la app
+    shell: cd proyectoIV && make install
+  - name: Ejecutamos la app
+    shell: cd proyectoIV && make run
+~~~
+
+
+Tras esto configuramos el Vagrant file de la siguiente manera:
+
+~~~
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+
+end
+~~~
+
+Siendo playbook.yml nuestro fichero de aprovisionamiento anteriormente descripto.
+
+Una vez hecho esto basta lanzar la máquina virtual usando `vagrant up`, en caso de que no se provisione correctamente, habrá que usar `vagrant provision`
+
+
+
+
+
+
+
+
+
