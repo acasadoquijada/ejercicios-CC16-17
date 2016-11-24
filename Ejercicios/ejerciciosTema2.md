@@ -1,4 +1,4 @@
-#Ejercicios Tema 6
+#Ejercicios Gestión de configuraciones
 
 ##Ejercicio 1
 ###Instalar chef en la máquina virtual que vayamos a usar
