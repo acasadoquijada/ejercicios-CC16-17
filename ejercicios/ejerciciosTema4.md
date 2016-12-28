@@ -44,9 +44,33 @@ Finalmente, procedemos a lanzar la máquina.
 
 Y conectarnos a ella
 
-`vagrant ssh`
+`sudo vagrant ssh`
 
 ![ejercicio3]()
+
+##Ejercicio 4
+###Instalar una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Para instalar una imagen de Ubuntu, podemos usar
+
+`sudo docker pull ubuntu`
+
+![ejercicio4-1]()
+
+Una opción para comprobar que la instalación ha sido exitosa es ejecutar
+
+`sudo docker run ubuntu ls`
+
+![ejercicio4-2]()
+
+Para instalar CentOS basta con repetir los comandos anteriores sustituyendo `ubuntu` por `centos`
+
+![ejercicio4-3]()
+
+![ejercicio4-4]()
+
+
+
 
 
 
