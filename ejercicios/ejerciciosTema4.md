@@ -82,7 +82,9 @@ Si no disponemos de uno podemos instalarlo con
 Lo primero que debemos hacer es conectarnos a él e instalar todo lo necesario.
 
 `apk update`
+
 `apk upgrade`
+
 `apk add git perl`
 
 ![ejercicio5-1](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio5-1_zpszp6ozpoe.png)
