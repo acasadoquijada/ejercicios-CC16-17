@@ -23,7 +23,7 @@ Ahora que nuestro contenedor está activado, podemos conectarnos a él
 
 `sudo lxc-attach -n una-caja`
 
-![ejercicio2]()
+![ejercicio2](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio2_zpshqebhtfw.png)
 
 ##Ejercicio 3
 ###Provisionar un contenedor LXC usando Ansible o alguna otra herramienta de configuración que ya se haya usado
@@ -46,7 +46,7 @@ Y conectarnos a ella
 
 `sudo vagrant ssh`
 
-![ejercicio3]()
+![ejercicio3](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio3_zpsgc8uzmlv.png)
 
 ##Ejercicio 4
 ###Instalar una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
@@ -55,19 +55,19 @@ Para instalar una imagen de Ubuntu, podemos usar
 
 `sudo docker pull ubuntu`
 
-![ejercicio4-1]()
+![ejercicio4-1](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio4-1_zpsauzqi2f3.png)
 
 Una opción para comprobar que la instalación ha sido exitosa es ejecutar
 
 `sudo docker run ubuntu ls`
 
-![ejercicio4-2]()
+![ejercicio4-2](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio4-2_zpsnl33w6li.png)
 
 Para instalar CentOS basta con repetir los comandos anteriores sustituyendo `ubuntu` por `centos`
 
-![ejercicio4-3]()
+![ejercicio4-3](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio4-3_zps1ekxvpo7.png)
 
-![ejercicio4-4]()
+![ejercicio4-4](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio4-4_zpsstppidcl.png)
 
 
 ##Ejercicio 5
@@ -85,13 +85,13 @@ Lo primero que debemos hacer es conectarnos a él e instalar todo lo necesario.
 `apk upgrade`
 `apk add git perl`
 
-![ejercicio5-1]()
+![ejercicio5-1](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio5-1_zpszp6ozpoe.png)
 
 Una vez instalado lo necesario hay que obtener el ID del contenedor. Para ello usamos
 
 `sudo docker ps -a`
 
-![ejercicio5-2]()
+![ejercicio5-2](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio5-2_zpswec7rn9x.png)
 
 En mi caso la ID del contenedor de alpine es `37af57cffd76`
 
@@ -103,7 +103,7 @@ Y podemos comprobar que se ha creado correctamente una nueva imagen conectándon
 
 `sudo docker run -it alpine2`
 
-![ejercicio5-3]()
+![ejercicio5-3](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio5-3_zpsuqzyocbb.png)
 
 ##Ejercicio 6
 ###Reproducir los contenedores creados anteriormente usando un Dockerfile
@@ -126,11 +126,11 @@ Con el Dockerfile creado ahora hay que ejecutar
 
 Nota: No olvidar el punto al final, si no el comando no funcionará
 
-![ejercicio6]()
+![ejercicio6](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio6_zpsje2lklug.png)
 
 Ya creado el contenedor podemos conectarnos a él y comprobar que se ha instalado lo que se le indicó en el Dockerfile
 
-
+![ejercicio6-2](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/ejercicio6-2_zpsz3223l6e.png)
 
 
 
