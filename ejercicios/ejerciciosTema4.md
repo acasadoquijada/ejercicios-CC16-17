@@ -70,6 +70,113 @@ Para instalar CentOS basta con repetir los comandos anteriores sustituyendo `ubu
 ![ejercicio4-4]()
 
 
+##Ejercicio 5
+###Crear a partir del contenedor anterior una imagen persistente con commit.
+
+En este caso voy a utilizar un contenedor con alpine.
+
+Si no disponemos de uno podemos instalarlo con
+
+`sudo docker pull alpine`
+
+Lo primero que debemos hacer es conectarnos a él e instalar todo lo necesario.
+
+`apk update`
+`apk upgrade`
+`apk add git perl`
+
+![ejercicio5-1]()
+
+Una vez instalado lo necesario hay que obtener el ID del contenedor. Para ello usamos
+
+`sudo docker ps -a`
+
+![ejercicio5-2]()
+
+En mi caso la ID del contenedor de alpine es `37af57cffd76`
+
+Ahora realizamos el commit
+
+`sudo docker commit 37af57cffd76 alpine2`
+
+Y podemos comprobar que se ha creado correctamente una nueva imagen conectándonos a ella.
+
+`sudo docker run -it alpine2`
+
+![ejercicio5-3]()
+
+##Ejercicio 6
+###Reproducir los contenedores creados anteriormente usando un Dockerfile
+
+Tenemos que empezar creando un Dockerfile indicando lo que va a ser instalado en el contenedor
+
+~~~
+FROM alpine:latest
+MAINTAINER acasadoquijada <acasadoquijada@GMail.com>
+
+
+RUN apk update && apk upgrade
+RUN apk add perl
+RUN apk add git
+~~~
+
+Con el Dockerfile creado ahora hay que ejecutar
+
+`sudo docker build -t acasadoquijada/alpine .`
+
+Nota: No olvidar el punto al final, si no el comando no funcionará
+
+![ejercicio6]()
+
+Ya creado el contenedor podemos conectarnos a él y comprobar que se ha instalado lo que se le indicó en el Dockerfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
